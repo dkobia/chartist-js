@@ -997,7 +997,9 @@ var Chartist = {
       var content = document.createElement('span');
       content.className = classes.join(' ');
       content.setAttribute('xmlns', Chartist.namespaces.xhtml);
-      content.innerText = labels[index];
+      // content.innerText = labels[index];
+      // to allow for links in labels
+      content.innerHTML = labels[index];
       content.style[axis.units.len] = Math.round(positionalData[axis.units.len]) + 'px';
       content.style[axis.counterUnits.len] = Math.round(positionalData[axis.counterUnits.len]) + 'px';
 
